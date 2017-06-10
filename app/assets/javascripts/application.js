@@ -16,3 +16,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$(function(){
+	$("footer-button").click(function(){
+		$("footer-button").css('background-color', 'red');
+	});
+});
