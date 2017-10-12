@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<%= render 'calendar' %>
+
+<h2>Listing Things</h2>
+
+<table id="calendar">
+  <thead>
+  </thead>
+  <tbody>
+    <% @things.each do |thing| %>
+      <tr>
+        <td><%= link_to thing.title, thing_path(thing) %></td>
+        <td><%= thing.day %> <%= thing.time %></td>
+        <td><%= link_to 'Edit', edit_thing_path(thing) %></td>
+        <td><%= link_to 'Destroy', thing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

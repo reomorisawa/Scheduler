@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+<h1>
+  <strong>date:</strong>
+  <%= @thing.day %>
+</h1>
+
+<p>
+  <strong>time:</strong>
+  <%= @thing.time %>
+</p>
+<p>
+  <strong>title:</strong>
+  <%= @thing.title %>
+</p>
+<p>
+  <strong>icon:</strong>
+  <%= @thing.icon %>
+</p>
+<p>
+  <strong>Body:</strong>
+  <%= @thing.body %>
+</p>
+
+<p>
+  <strong>place:</strong>
+  <%= @thing.place %>
+</p>
+
+
+<%= link_to 'Edit', edit_thing_path(@thing) %>
