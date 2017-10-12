@@ -10,15 +10,10 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-//= require fullcalendar
-//= require moment
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+
 //= require_tree .
 
-$(function(){
-	$("footer-button").click(function(){
-		$("footer-button").css('background-color', 'red');
-	});
-});
+
+

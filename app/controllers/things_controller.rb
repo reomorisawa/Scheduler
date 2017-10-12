@@ -1,4 +1,6 @@
 class ThingsController < ApplicationController
+  before_action :authenticate_user!
+
   before_action :set_thing, only: [:show, :edit, :update, :destroy]
 
   # GET /things
@@ -25,6 +27,7 @@ class ThingsController < ApplicationController
   # POST /things.json
   def create
     @thing = Thing.new(thing_params)
+    @thing.user_id = current_user.id
 
     respond_to do |format|
       if @thing.save
@@ -61,6 +64,12 @@ class ThingsController < ApplicationController
     end
   end
 
+  def change_session_date
+    session[:date] = '2017-01-01'
+    @date = params[:date] 
+    puts @date
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_thing
@@ -69,6 +78,6 @@ class ThingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def thing_params
-      params.require(:thing).permit(:body)
+      params.require(:thing).permit(:title, :icon, :body, :time, :place, :user_id, :day)
     end
 end
